@@ -1,1 +1,1 @@
-# loyalty-language-api
+# Loyalty Language API
