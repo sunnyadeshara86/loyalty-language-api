@@ -2,6 +2,6 @@
 {
 	public class LocaleCodeResponse
 	{
-        public string Code { get; set; }
-    }
+		public string Code { get; set; }
+	}
 }

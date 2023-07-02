@@ -1,5 +1,4 @@
 ﻿using Loyalty.Language.API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Loyalty.Language.API.Controllers
@@ -42,7 +41,7 @@ namespace Loyalty.Language.API.Controllers
 		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
-		public IActionResult GetLanguages(GetLanguagesRequest getLanguagesRequest) 
+		public IActionResult GetLanguages(GetLanguagesRequest getLanguagesRequest)
 		{
 			return Ok(new GetLanguagesResponse());
 		}
@@ -74,6 +73,18 @@ namespace Loyalty.Language.API.Controllers
 		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
 		public IActionResult UpdateLanguage(UpdateLanguageRequest updateLanguageRequest)
+		{
+			return NoContent();
+		}
+
+		[HttpPut]
+		[Route("{code}/translation/{key}")]
+		[ProducesResponseType(204, Type = typeof(Dictionary<string, string>))]
+		[ProducesResponseType(400, Type = typeof(ValidationErrorResponse))]
+		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
+		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
+		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
+		public IActionResult ManageLanguageTranslation(string code, string key, List<ManageTranslationRequest> manageTranslationRequest)
 		{
 			return NoContent();
 		}
