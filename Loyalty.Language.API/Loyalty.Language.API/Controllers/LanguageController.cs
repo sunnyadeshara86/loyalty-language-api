@@ -36,19 +36,20 @@ namespace Loyalty.Language.API.Controllers
 			return Ok();
 		}
 
-		[HttpGet]
+		#endregion
+
+		#region Post Methods
+
+		[HttpPost]
+		[Route("search")]
 		[ProducesResponseType(200, Type = typeof(GetLanguagesResponse))]
 		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(404, Type = typeof(ErrorResponse))]
-		public IActionResult GetLanguages(GetLanguagesRequest getLanguagesRequest)
+		public IActionResult SearchLanguages(GetLanguagesRequest getLanguagesRequest)
 		{
 			return Ok(new GetLanguagesResponse());
 		}
-
-		#endregion
-
-		#region Post Methods
 
 		[HttpPost]
 		[ProducesResponseType(204)]

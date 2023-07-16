@@ -25,6 +25,7 @@ namespace Loyalty.Language.API.Controllers
 		#region Get Methods
 
 		[HttpGet]
+		[Route("{locale}")]
 		[ProducesResponseType(200, Type = typeof(Dictionary<string, string>))]
 		[ProducesResponseType(401, Type = typeof(ErrorResponse))]
 		[ProducesResponseType(403, Type = typeof(ErrorResponse))]
